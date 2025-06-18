@@ -1,8 +1,8 @@
+import 'package:first_project/counter_cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'calculator/bmi_calculator_page.dart';
-
-
+import 'counter_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,8 +23,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
-    home: BmiCalculatorPage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BlocProvider(
+        create: (context) => CounterCubit(),
+        child: CounterPage(),
+      ),
     );
   }
 }
