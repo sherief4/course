@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CounterCubit extends Cubit<CounterStates>{
   CounterCubit():super(CounterInitialState());
 
-  static CounterCubit get(BuildContext context) => CounterCubit();
+  static CounterCubit get(BuildContext context) => BlocProvider.of(context);
 
 
   int count = 0 ;
